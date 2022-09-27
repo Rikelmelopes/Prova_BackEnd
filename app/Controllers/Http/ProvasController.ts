@@ -7,25 +7,25 @@ export default class ProvasController {
 
     if (dados.tipoPessoa == "PF" && dados.cpf == null) {
       return (resultado = {
-        tipo: "error",
-        mensagem: "CPF não informado",
+        tipo: "erro",
+        mensagem: "CPF nulo",
         dados: {
           tipoPessoa: dados.tipoPessoa,
-          cpf: "<não informado>",
+          cpf: "nulo",
         },
       });
     } else if (dados.tipoPessoa == "PJ" && dados.cnpj == null) {
       return (resultado = {
-        tipo: "error",
-        mensagem: "CNPJ não informado",
+        tipo: "erro",
+        mensagem: "CNPJ nulo",
         dados: {
           tipoPessoa: dados.tipoPessoa,
-          cnpj: "<não informado>",
+          cnpj: "nulo",
         },
       });
     } else if (dados.tipoPessoa == "PJ" && dados.sexo != null) {
       return (resultado = {
-        tipo: "error",
+        tipo: "erro",
         mensagem: "O campo sexo só é permitido para Pessoa Física",
         dados: {
           tipoPessoa: dados.tipoPessoa,
@@ -34,7 +34,7 @@ export default class ProvasController {
       });
     } else if (dados.tipoPessoa == "PJ" && dados.cargo != null) {
       return (resultado = {
-        tipo: "error",
+        tipo: "erro",
         mensagem: "O campo cargo só é permitido para Pessoa Física",
         dados: {
           tipoPessoa: dados.tipoPessoa,
@@ -43,7 +43,7 @@ export default class ProvasController {
       });
     } else if (dados.cpf != null && dados.cnpj != null) {
       return (resultado = {
-        tipo: "error",
+        tipo: "erro",
         mensagem:
           "Favor informar somente uma opção, CPF ou CNPJ, de acordo com o Tipo de Pessoa",
         dados: {
